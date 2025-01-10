@@ -1,3 +1,7 @@
+"""
+Model loading and text generation for base and fine-tuned flan-t5 models.
+Supports lazy loading — models are loaded on first request.
+"""
 import torch
 from transformers import T5ForConditionalGeneration, T5Tokenizer
 from utils.config import SYSTEM_PROMPT
