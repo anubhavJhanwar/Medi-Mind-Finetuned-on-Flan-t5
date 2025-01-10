@@ -1,3 +1,7 @@
+"""
+MediMind AI — FastAPI entry point.
+Initializes app, CORS middleware, and preloads models on startup.
+"""
 import threading
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
