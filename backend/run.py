@@ -1,6 +1,5 @@
 """
-Entry point — run the FastAPI server.
-Usage: python run.py
+Server entry point — run with: python run.py
 """
 import uvicorn
 
