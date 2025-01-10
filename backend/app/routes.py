@@ -1,3 +1,6 @@
+"""
+API routes — POST /ask and GET /health endpoints.
+"""
 from fastapi import APIRouter, HTTPException
 from app.schemas import QuestionRequest, AnswerResponse, HealthResponse
 from app.inference import load_base_model, load_finetuned_model, get_answer
