@@ -1,3 +1,4 @@
+// ResponseCard — displays model answer with variant styling (base/finetuned)
 import { motion } from 'framer-motion'
 
 export default function ResponseCard({ title, answer, variant }) {
