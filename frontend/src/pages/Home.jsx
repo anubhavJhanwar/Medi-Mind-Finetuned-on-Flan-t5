@@ -1,3 +1,4 @@
+// Home page — main comparison UI with question input and dual model output
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import ChatBox from '../components/ChatBox'
