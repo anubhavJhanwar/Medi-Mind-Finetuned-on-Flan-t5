@@ -1,3 +1,4 @@
+// Animated loading indicator shown during model inference
 import { motion } from 'framer-motion'
 
 export default function Loader() {
