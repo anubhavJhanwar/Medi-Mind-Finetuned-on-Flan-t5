@@ -1,3 +1,4 @@
+// ChatBox — textarea input with animated submit button
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
