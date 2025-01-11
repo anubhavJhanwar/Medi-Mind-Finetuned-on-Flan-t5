@@ -1,3 +1,4 @@
+// API service — Axios client for MediMind backend
 import axios from 'axios'
 
 const client = axios.create({
