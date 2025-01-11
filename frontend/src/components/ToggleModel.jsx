@@ -1,3 +1,4 @@
+// ToggleModel — switch between side-by-side, base-only, finetuned-only views
 export default function ToggleModel({ active, onChange }) {
   return (
     <div className="toggle-model">
