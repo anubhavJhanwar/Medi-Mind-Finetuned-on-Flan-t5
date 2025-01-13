@@ -4,11 +4,10 @@ Supports lazy loading — models are loaded on first request.
 """
 import torch
 from transformers import T5ForConditionalGeneration, T5Tokenizer
-from utils.config import SYSTEM_PROMPT
+from utils.config import SYSTEM_PROMPT, MAX_NEW_TOKENS
 
-# flan-t5-base is already cached on your machine — runs in seconds on CPU
 BASE_MODEL_ID = "google/flan-t5-base"
-FT_MODEL_ID   = "models/flan-t5-medical"   # your fine-tuned model on medical Q&A
+FT_MODEL_ID   = "models/flan-t5-medical"
 
 _base_model = None
 _finetuned_model = None
@@ -45,20 +44,17 @@ def load_finetuned_model():
 
 
 def get_answer(model, question: str) -> str:
+    """Generate an answer for the given medical question."""
     is_finetuned = (model is _finetuned_model)
     tokenizer = _ft_tokenizer if is_finetuned else _base_tokenizer
 
-    prompt = (
-        f"You are a medical assistant. Answer this medical question clearly and accurately.\n\n"
-        f"Question: {question}\n\nAnswer:"
-    )
-
+    prompt = f"Answer this medical question: {question}"
     inputs = tokenizer(prompt, return_tensors="pt", max_length=512, truncation=True)
 
     with torch.no_grad():
         outputs = model.generate(
             **inputs,
-            max_new_tokens=200,
+            max_new_tokens=MAX_NEW_TOKENS,
             num_beams=4,
             early_stopping=True,
             no_repeat_ngram_size=3,
