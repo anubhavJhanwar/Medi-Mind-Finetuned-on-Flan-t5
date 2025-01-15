@@ -9,7 +9,7 @@ from app.routes import router
 
 app = FastAPI(
     title="MediMind AI",
-    description="Medical Q&A with Base vs Fine-Tuned Mistral-7B comparison",
+    description="MediMind AI — Medical Q&A with Base vs Fine-Tuned Model Comparison",
     version="1.0.0",
 )
 
