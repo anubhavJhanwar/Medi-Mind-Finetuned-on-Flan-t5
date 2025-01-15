@@ -8,8 +8,13 @@ load_dotenv()
 
 MODEL_ID = os.getenv("MODEL_ID", "mistralai/Mistral-7B-Instruct-v0.2")
 FINETUNED_DIR = os.getenv("FINETUNED_DIR", "outputs/mistral-medical-qa")
-MAX_NEW_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "300"))
+MAX_NEW_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "200"))
 DEVICE_MAP = os.getenv("DEVICE_MAP", "auto")
+
+# Generation settings
+TEMPERATURE = 0.1
+NUM_BEAMS = 4
+NO_REPEAT_NGRAM_SIZE = 3
 
 SYSTEM_PROMPT = (
     "You are a knowledgeable and accurate medical assistant. "
